@@ -1,0 +1,35 @@
+
+const createOffset = function (offset) {
+    let string = "";
+    for (i = 0; i < offset; i++) {
+        string += " "
+    }
+
+    return string;
+};
+
+function myTriangle(offset, height) {
+
+    let offsetSpace = createOffset(offset);
+
+    let triangle = "";
+
+    for (i = 0; i < height; i++) {
+
+        triangle += "\n" + offsetSpace;
+
+        triangle += "  ".repeat(height - i);
+
+        for (j = 0; j <= i; j++) {
+            triangle += " * ";
+        }
+
+    }
+
+    return triangle;
+}
+
+console.log(myTriangle(10, 3));
+console.log(myTriangle(10, 5));
+console.log(myTriangle(20, 3));
+console.log(myTriangle(20, 5));
